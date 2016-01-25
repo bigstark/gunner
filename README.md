@@ -1,6 +1,5 @@
 # gunner
-shoot sequentially
-
+It can help you when you execute method sequentially by annotation.
 
 
 ##Include your project
@@ -29,6 +28,11 @@ private void someMethod() {
 
 @Bullet(sequence = 2, delay = 1000)
 private void someSecondMethod() {
+    // Something to do
+}
+
+@Bullet(sequence = 3, delay = 2000)
+private void someThirdMethod() {
     // Something to do
 }
 ```

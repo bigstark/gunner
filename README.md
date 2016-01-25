@@ -1,6 +1,7 @@
 # gunner
-It can help you when you execute method sequentially by annotation.
+It can help you when you execute method sequentially.
 
+If you have method with annotation, gunner execute method sequentially.
 
 ##Include your project
 add build.gradle

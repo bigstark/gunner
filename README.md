@@ -26,6 +26,11 @@ Add bullet annotation and set sequence and delay (delay is optional)
 private void someMethod() {
     // Something to do
 }
+
+@Bullet(sequence = 2)
+private void someSecondMethod() {
+    // Something to do
+}
 ```
 
 Execute method by sequence. Sequence must over 0, and delay too.

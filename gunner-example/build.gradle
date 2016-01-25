@@ -16,5 +16,5 @@ android {
 
 dependencies {
     compile project(':gunner-library')
-//    compile 'com.github.bigstark:gunner:0.6'
+//    compile 'com.github.bigstark:gunner:1.0'
 }

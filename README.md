@@ -22,12 +22,12 @@ dependencies {
 ##Usage
 Add bullet annotation and set sequence and delay (delay is optional)
 ```
-@Bullet(sequence = 1, delay = 1000)
+@Bullet(sequence = 1)
 private void someMethod() {
     // Something to do
 }
 
-@Bullet(sequence = 2)
+@Bullet(sequence = 2, delay = 1000)
 private void someSecondMethod() {
     // Something to do
 }

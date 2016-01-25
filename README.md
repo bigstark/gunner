@@ -21,7 +21,7 @@ dependencies {
 
 ##Usage
 Add bullet annotation and set sequence and delay (delay is optional)
-```
+```java
 @Bullet(sequence = 1)
 private void someMethod() {
     // Something to do
@@ -39,7 +39,7 @@ private void someThirdMethod() {
 ```
 
 Execute method by sequence. Sequence must over 0, and delay too.
-```
+```java
 Gunner.shoot(this); // "this" is target that has method with annotation
 ```
 

@@ -1,4 +1,7 @@
 # gunner
+[![travis](https://travis-ci.org/bigstark/gunner.svg?branch=master)](https://travis-ci.org/bigstark/gunner)
+[![license](https://img.shields.io/hexpm/l/plug.svg)](LICENSE)
+
 It can help you when you execute method sequentially.
 
 If you have method with annotation, gunner execute method sequentially.

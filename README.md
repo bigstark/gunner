@@ -1,6 +1,7 @@
 # gunner
 [![travis](https://travis-ci.org/bigstark/gunner.svg?branch=master)](https://travis-ci.org/bigstark/gunner)
 [![license](https://img.shields.io/hexpm/l/plug.svg)](LICENSE)
+[![jitpack](https://img.shields.io/badge/jitpack-1.0-green.svg)](https://jitpack.io/#bigstark/gunner)
 
 It can help you when you execute method sequentially.
 

@@ -19,7 +19,7 @@ allprojects {
 ```
 ```
 dependencies {
-        compile 'com.github.bigstark:gunner:1.0'
+        compile 'com.github.bigstark:gunner:1.1'
 }
 ```
 
@@ -45,6 +45,12 @@ private void someThirdMethod() {
 Execute method by sequence. Sequence must over 0, and delay too.
 ```java
 Gunner.shoot(this); // "this" is target that has method with annotation
+```
+
+
+If you want to shoot multiple target, you can do like this.
+```java
+Gunner.shoot(target1, target2, target3)
 ```
 
 

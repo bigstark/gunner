@@ -6,6 +6,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Gunner {
 
@@ -22,6 +25,13 @@ public class Gunner {
         }
 
         return instance;
+    }
+
+
+    public static void shoot(Object... targets) {
+        for (Object target : targets) {
+            shoot(target);
+        }
     }
 
 
@@ -46,13 +56,20 @@ public class Gunner {
     }
 
 
-    public static void cancel(Object target) {
-        getInstance().cancelInternal();
+    public static void cancel(Object... targets) {
+        for (Object target : targets) {
+            cancel(target);
+        }
     }
 
 
-    private ArrayList<BulletHandler> methodSet = new ArrayList<>();
-    private GunHandler gunHandler = new GunHandler();
+    public static void cancel(Object target) {
+        getInstance().cancelInternal(target);
+    }
+
+
+    private Map<Integer, GunHandler> gunHandlerMap = new HashMap<>();
+    private List<BulletHandler> methodSet = new ArrayList<>();
 
 
     void enqueue(Method method, int sequence, long delay) {
@@ -71,6 +88,8 @@ public class Gunner {
 
     void shootInternal(Object target) {
         Collections.sort(methodSet, bulletComparator);
+
+        GunHandler gunHandler = new GunHandler();
         gunHandler.setTarget(target);
 
         long delay = 0;
@@ -84,11 +103,20 @@ public class Gunner {
         }
 
         methodSet.clear();
+
+        gunHandlerMap.put(target.hashCode(), gunHandler);
     }
 
 
-    void cancelInternal() {
+    void cancelInternal(Object target) {
+        if (!gunHandlerMap.containsKey(target.hashCode())) {
+            return;
+        }
+
+        GunHandler gunHandler = gunHandlerMap.get(target.hashCode());
         gunHandler.removeMessages(GunHandler.WHAT_METHOD);
+
+        gunHandlerMap.remove(target.hashCode());
     }
 
 
@@ -125,6 +153,5 @@ public class Gunner {
             return rSeq < lSeq ? 1 : rSeq == lSeq ? 0 : -1;
         }
     };
-
 
 }

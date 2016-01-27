@@ -12,4 +12,14 @@
         android:src="@drawable/android1"
         />
 
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#ffff4444"
+        android:padding="20dp"
+        />
+
 </RelativeLayout>
